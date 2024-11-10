@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://dky4doi1m7taf"]
+
+[ext_resource type="Script" path="res://scripts/pickable.gd" id="1_3yg3v"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_uxcn0"]
+bounce = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vqljb"]
+albedo_color = Color(0.407843, 0.933333, 1, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_jcdgr"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_noau5"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_irafi"]
+radius = 0.408827
+height = 0.932602
+
+[node name="RigidCylinder" type="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.04896, 0.434027, 2.11835)
+collision_layer = 12
+collision_mask = 13
+physics_material_override = SubResource("PhysicsMaterial_uxcn0")
+script = ExtResource("1_3yg3v")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.54, 0, 0, 0, 0.32, 0, 0, 0, 0.54, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_vqljb")
+mesh = SubResource("CylinderMesh_jcdgr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.54, 0, 0, 0, 0.32, 0, 0, 0, 0.54, 0, -0.0518456, 0)
+shape = SubResource("CylinderShape3D_noau5")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("CapsuleShape3D_irafi")

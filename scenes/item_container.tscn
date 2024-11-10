@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://b74ch1dhhmbj6"]
+
+[ext_resource type="PackedScene" uid="uid://cx64reualc26b" path="res://3dmodels/leaf_sword.glb" id="1_7x6ul"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pac5l"]
+radius = 1.58985
+height = 10.3136
+
+[node name="itemContaner" type="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.19253, -1.1428)
+collision_layer = 0
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.0987957, -0.0142044, 0.00613574, 0.0148438, 0.0982003, -0.0116762, -0.00436664, 0.0124464, 0.0991263, 0.0471964, -0.164876, 0.0158982)
+shape = SubResource("CapsuleShape3D_pac5l")
+
+[node name="leafsword" parent="." instance=ExtResource("1_7x6ul")]
+transform = Transform3D(0.299184, -0.218542, 0.121772, 0.238923, 0.305892, -0.0380365, -0.0741962, 0.10378, 0.368544, 0.027104, 0.149997, 0.052184)
