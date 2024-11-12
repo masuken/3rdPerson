@@ -7,6 +7,8 @@ extends Container
 var faceup: bool = false
 var yokai_number:int
 
+var neruma:String
+
 var root_node:Node
 
 
