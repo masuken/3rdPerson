@@ -13,6 +13,8 @@ var nyannyan:String
 var neruma:String
 var kyakkya:String
 
+var Yoda:String
+
 var root_node:Node
 
 
